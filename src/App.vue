@@ -1,24 +1,24 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <DroneControl></DroneControl>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import DroneControl from './components/DroneControl'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    DroneControl
   }
 }
 </script>
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
