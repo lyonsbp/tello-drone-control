@@ -40,7 +40,7 @@ droneResponder.on(
   throttle(state => {
     const formattedState = parseState(state.toString())
     console.log(formattedState)
-    io.sockets.emit('dronestate', formattedState)
+    io.sockets.emit('droneResponse', formattedState)
   }, 500)
 )
 

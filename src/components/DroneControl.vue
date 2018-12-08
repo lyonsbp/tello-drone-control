@@ -21,6 +21,26 @@
         land
       </button>
     </div>
+    <div>
+      <table>
+        <tr>
+            <th
+              v-for="(val, key) in droneResponse"
+              :key="key"
+            >
+              {{ key }}
+            </th>
+        </tr>
+        <tr>
+            <td
+              v-for="(val, key) in droneResponse"
+              :key="key"
+            >
+              {{ val }}
+            </td>
+        </tr>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -29,7 +49,8 @@ import socket from '../socket'
 export default {
   data () {
     return {
-      command: ''
+      command: '',
+      droneResponse: null
     }
   },
   methods: {
@@ -42,6 +63,11 @@ export default {
     land () {
       this.sendCommand('land')
     }
+  },
+  mounted () {
+    socket.on('droneResponse', response => {
+      this.droneResponse = response
+    })
   }
 }
 </script>
