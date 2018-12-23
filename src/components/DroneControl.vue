@@ -11,14 +11,19 @@
     </button>
     <div>
       <button
-        @click="takeOff"
+        @click="sendCommand('takeoff')"
       >
         Take Off
       </button>
       <button
-        @click="land"
+        @click="sendCommand('land')"
       >
         land
+      </button>
+      <button
+        @click="sendCommand('emergency')"
+      >
+        E Stop
       </button>
     </div>
     <div>
@@ -56,12 +61,6 @@ export default {
   methods: {
     sendCommand (command) {
       socket.emit('command', command)
-    },
-    takeOff () {
-      this.sendCommand('takeoff')
-    },
-    land () {
-      this.sendCommand('land')
     }
   },
   mounted () {
