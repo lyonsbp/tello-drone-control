@@ -9,7 +9,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "socket.io-client": "^2.2.0",
+    "socket.io-client": "^4.0.0",
     "vue": "^2.5.17"
   },
   "devDependencies": {
